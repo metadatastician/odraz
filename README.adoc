@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: CC-BY-SA-4.0
+// SPDX-License-Identifier: MPL-2.0 for code
+// SPDX-License-Identifier CC-BY-SA-4.0 for prose
 = Odraz
 :toc: macro
 :icons: font
@@ -18,7 +19,7 @@ toc::[]
 tree-sitter grammar (corpus tests pass), and `Odraz0`, a Chapel bootstrap
 interpreter that compiles with Chapel 2.10 and runs every example in
 `examples/` except the off-side `layout.Odraz` (the `sexp` reader only, as
-planned). `just test` checks all of that. If a model or a person tells you Žiz is "locked in", is
+planned). `just test` checks all of that. If a model or a person tells you Odraz is "locked in", is
 "dialectical", evaluates "triads", or can be "synthesised end-to-end in 48
 hours", see link:TRIAGE.adoc[TRIAGE.adoc].
 
@@ -28,13 +29,13 @@ hours", see link:TRIAGE.adoc[TRIAGE.adoc].
 |===
 | If you want… | Go to
 
-| What Žiz is, precisely, and what it is not
+| What Odraz is, precisely, and what it is not
 | link:DESIGN.adoc[DESIGN.adoc]
 
 | The Judgement Evidence Graph — the thing that replaces a typechecker
 | link:docs/JEG.adoc[docs/JEG.adoc]
 
-| Which AI-generated claims about Žiz are real, misapplied, or invented
+| Which AI-generated claims about Odraz are real, misapplied, or invented
 | link:TRIAGE.adoc[TRIAGE.adoc]
 
 | The grammar (tree-sitter, ASCII-only, off-side via external scanner)
@@ -118,4 +119,4 @@ Follows the Rhodium Standard Repository conventions from
 `hyperpolymath/standards` (the RSR template supplies `SECURITY`,
 `CONTRIBUTING`, `Mustfile`, `.machine_readable/`, etc.). Language policy:
 Chapel for the bootstrap, C only for the tree-sitter scanner, JavaScript
-only for the tree-sitter grammar DSL. No Python, no Rust component, no Deno.
+only for the tree-sitter grammar DSL.

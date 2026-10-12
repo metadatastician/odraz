@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
-= Žiz
+= Odraz
 :toc: macro
 :icons: font
 
@@ -15,9 +15,9 @@ toc::[]
 == Status — read this first
 
 *Pre-alpha; milestone 0 runs.* This repository holds a design, a
-tree-sitter grammar (corpus tests pass), and `ziz0`, a Chapel bootstrap
+tree-sitter grammar (corpus tests pass), and `Odraz0`, a Chapel bootstrap
 interpreter that compiles with Chapel 2.10 and runs every example in
-`examples/` except the off-side `layout.ziz` (the `sexp` reader only, as
+`examples/` except the off-side `layout.Odraz` (the `sexp` reader only, as
 planned). `just test` checks all of that. If a model or a person tells you Žiz is "locked in", is
 "dialectical", evaluates "triads", or can be "synthesised end-to-end in 48
 hours", see link:TRIAGE.adoc[TRIAGE.adoc].
@@ -41,13 +41,13 @@ hours", see link:TRIAGE.adoc[TRIAGE.adoc].
 | link:grammar/grammar.js[grammar/grammar.js], link:grammar/src/scanner.c[grammar/src/scanner.c]
 
 | The bootstrap interpreter
-| link:bootstrap/ziz0.chpl[bootstrap/ziz0.chpl]
+| link:bootstrap/Odraz0.chpl[bootstrap/Odraz0.chpl]
 
 | Examples (incl. the λ-calculus self-hosting smoke test)
 | link:examples/[examples/]
 
 | The one place the pun touches code
-| link:lib/dialectic.ziz[lib/dialectic.ziz]
+| link:lib/dialectic.Odraz[lib/dialectic.Odraz]
 
 | JEG sidecar schema draft
 | link:docs/jeg-schema.a2ml[docs/jeg-schema.a2ml]
@@ -68,7 +68,7 @@ hours", see link:TRIAGE.adoc[TRIAGE.adoc].
 ----
 
 ----
-$ ziz0 --file=examples/fact.ziz --jeg=observe
+$ Odraz0 --file=examples/fact.Odraz --jeg=observe
 3628800
 ; --- JEG: 25 judgements, 206 evidence edges
 (sym:fact :defined-at)  ; observed=1
@@ -90,8 +90,8 @@ Needs Chapel *2.10* (`just build` refuses any other `chpl`) and the
 tree-sitter CLI.
 
 ----
-just build           # chpl --fast bootstrap/ziz0.chpl -o ziz0
-just examples        # run every examples/*.ziz the sexp reader can read
+just build           # chpl --fast bootstrap/Odraz0.chpl -o Odraz0
+just examples        # run every examples/*.Odraz the sexp reader can read
 just examples-check  # ...and fail unless each prints its expected lines
 just grammar         # tree-sitter generate && tree-sitter test
 just ascii-check     # non-ASCII only inside strings and ; comments

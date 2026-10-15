@@ -58,12 +58,12 @@ Use plain JavaScript when this tooling is needed. The "use ReScript" rule is ret
 
 ---
 
-# This repo: `rsr-template-repo`  ·  clade `rm-rsr-template-repo`
+# This repo: `odraz`  ·  clade `rm-odraz`
 
-- **Identity** — uuid `8e515699-3fb9-8785-8883-ef2a100c2e02` (UUIDv8 profile C, registered domain `gv-clade-index`, preimage `gv-clade-index:github.com/hyperpolymath/rsr-template-repo`); clade `rm` (secondary ``); born 2026-03-16; forge `hyperpolymath/rsr-template-repo`.
-- **IS** — Canonical RSR-compliant repository template: scaffolding (CI/CD, AI manifests, ABI/FFI standards, container ecosystem, governance) that new hyperpolymath projects are instantiated from.
-- **IS-NOT** — a project in its own right · Scaffoldia (the full-featured repo designer) · standards (the canon source this template operationalises)
-- **Where it sits** — pipeline position **foundation**; chain `standards → rsr-template-repo → (every estate repo)`; coordination = `standards`.
+- **Identity** — uuid `25d6f5aa-1309-8a09-b669-6bef1d20994c` (UUIDv8 profile C, registered domain `gv-clade-index`, preimage `gv-clade-index:github.com/metadatastician/odraz`); clade `rm` (secondary ``); born 2026-09-24; forge `metadatastician/odraz`.
+- **IS** — `odraz`, a standalone project at `metadatastician/odraz`, instantiated from the RSR template (its own purpose statement is still to be written — this line previously carried the template's self-description verbatim).
+- **IS-NOT** — rsr-template-repo (the template it was instantiated from) · standards (the canon source)
+- **Where it sits** — standalone; instantiated from `rsr-template-repo`; coordination = `standards`.
 - **Constraints here** (AGENTIC) — fail-closed; evidence-per-step; no-silent-skip; rerun-after-fix; release-claim-requires-hard-pass. Never: banned langs (above), secrets, state files in repo root, AGPL. Details: `.machine_readable/bot_directives/{methodology,coverage,debt}.a2ml`.
 - **Golden path** (ANCHOR) — `just test && just quality` → Core tests pass; Quality gates pass; No unresolved critical security findings.
 - **State** — phase maintenance; maturity production; 95% complete; status active.

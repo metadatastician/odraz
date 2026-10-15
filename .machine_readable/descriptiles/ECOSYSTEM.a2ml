@@ -1,29 +1,23 @@
 # SPDX-License-Identifier: MPL-2.0
-# ECOSYSTEM.a2ml — Ecosystem position (META-TEMPLATE)
-#
-# This is the ECOSYSTEM file for rsr-template-repo itself. It records the
-# TEMPLATE's own position in the estate. When consumed by a new project,
-# replace these fields with the target project's ecosystem position and
-# related projects (see the NOTE FOR CONSUMERS at the bottom).
+# ECOSYSTEM.a2ml — Odraz ecosystem position
 
 [metadata]
-project = "rsr-template-repo"
+project = "odraz"
 ecosystem = "hyperpolymath"
 
 [position]
-type = "repository-template"
-purpose = "Canonical RSR-compliant repository template: scaffolding (CI/CD, AI manifests, ABI/FFI standards, container ecosystem, governance) that new hyperpolymath projects are instantiated from."
+type = "standalone"
+purpose = "Odraz is a unityped, homoiconic, metaiconic, reflexive language with no typechecker: a Judgement Evidence Graph records beliefs about terms and their evidence. Bootstrapped in Chapel."
 # IS-NOT — anti-identity (the boundary-erosion guard; each line is a real past confusion)
 what-this-is-not = [
-  "a project in its own right",
-  "Scaffoldia (the full-featured repo designer)",
-  "standards (the canon source this template operationalises)",
+  "rsr-template-repo (the template it was instantiated from)",
+  "standards (the canon source)",
 ]
 
 [pipeline]
-position = "foundation"
-chain = "standards → rsr-template-repo → (every estate repo)"
-notes = "rsr-template-repo turns the RSR standard into runnable scaffolding. New repos are created from it via `just repo-init`, which substitutes the {{PLACEHOLDER}} tokens."
+position = "standalone"
+chain = "rsr-template-repo → odraz"
+notes = "Odraz is a standalone language project at metadatastician/odraz, instantiated from rsr-template-repo."
 coordination = "standards"
 
 [related-projects]

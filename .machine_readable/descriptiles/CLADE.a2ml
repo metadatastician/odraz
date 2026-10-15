@@ -21,17 +21,18 @@
 # ===========================================================================
 
 [identity]
-# THE UUID IS DERIVED, NOT ALLOCATED (gv-clade-index:
-# docs/SPEC-clade-verisim-portal.adoc §Identity Model):
-#     uuid = UUIDv5(namespace = URL, name = "github.com/<owner>/<name>")
-# This value is a recomputable fact about THIS repo and nothing else:
-#     uuidgen --sha1 --namespace @url --name "github.com/hyperpolymath/rsr-template-repo"
-#     -> a5ea1382-a34c-5334-8a46-a2ebe904c810
-uuid = "a5ea1382-a34c-5334-8a46-a2ebe904c810"
+# Derived with UUIDv8 profile C (standards ADR-008, D320).
+# Registered domain: gv-clade-index; name: github.com/<owner>/<name>.
+# Preimage (UTF-8, no trailing newline):
+#     gv-clade-index:github.com/metadatastician/odraz
+# Take bytes 0..15 of SHA-256(preimage), set the version nibble to 8 and
+# the RFC 9562 variant bits to 10, then format as a UUID:
+#     -> 25d6f5aa-1309-8a09-b669-6bef1d20994c
+uuid = "25d6f5aa-1309-8a09-b669-6bef1d20994c"
 primary-forge = "github"
-primary-owner = "hyperpolymath"
-canonical-name = "rsr-template-repo"
-prefixed-name = "rm-rsr-template-repo"
+primary-owner = "metadatastician"
+canonical-name = "odraz"
+prefixed-name = "rm-odraz"
 
 [clade]
 # The 2 letters abbreviate the CLADE's name below — never the repo's name.
@@ -43,9 +44,9 @@ assigned = "2026-03-16"
 rationale = "Repo Management & Tooling (`rm`): the core value proposition is scaffolding repositories — CI/CD, AI manifests, ABI/FFI seams, governance — that other projects are instantiated from. `gv` was previously claimed as a secondary and is dropped: the template SHIPS governance files, but shipping them is not being a governance project. That authority lives in `standards` and `metadatastician-governance`. The inherited [\"gv\"] propagated into every repo created from this template, where it was even less meant."
 
 [forges]
-github = "hyperpolymath/rsr-template-repo"
-gitlab = "hyperpolymath/rsr-template-repo"
-bitbucket = "hyperpolymath/rsr-template-repo"
+github = "metadatastician/odraz"
+gitlab = ""
+bitbucket = ""
 
 [lineage]
 type = "standalone"
@@ -54,7 +55,7 @@ type = "standalone"
 # That is the same field confusion that put repo descriptions into `parent`
 # across 153 CLADE.a2ml files estate-wide (gv-clade-index PR #50).
 parent = ""
-born = "2026-03-16"
+born = "2026-09-24"
 previous-names = []
 
 [status]
@@ -62,7 +63,7 @@ previous-names = []
 # Added 2026-07-17: this file had no [status] block, so it failed CLADE-004 and
 # CLADE-005 — and so did every repo that inherited it.
 phase = "active"
-since = "2026-03-16"
+since = "2026-09-24"
 present = true
 aliases = []
 merged-into = ""
@@ -72,5 +73,5 @@ ended = ""
 
 [[status.history]]
 phase = "active"
-since = "2026-03-16"
+since = "2026-09-24"
 note = "the estate's canonical repository template; in production use"

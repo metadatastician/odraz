@@ -201,6 +201,17 @@ fi
 
 log_pass "just repo-init completed"
 
+# Profile-C test vector: SHA-256 of this exact UTF-8 preimage, no newline:
+# gv-clade-index:github.com/test-owner/test-instantiated-repo
+# Take bytes 0..15, set version to 8 and RFC 9562 variant bits to 10.
+MINTED_UUID=$(sed -n 's/^uuid = "\([^"]*\)".*/\1/p' \
+    "$TEST_REPO_PATH/.machine_readable/descriptiles/CLADE.a2ml")
+if [ "$MINTED_UUID" != "c0e3fdf2-f5c8-8df5-a606-36022105ec01" ]; then
+    log_error "Minted descriptor UUID does not match the profile-C test vector: $MINTED_UUID"
+    exit 1
+fi
+log_pass "Minted descriptor uses UUIDv8 profile C with the RFC 9562 variant"
+
 #==============================================================================
 # PHASE 3a: GUIX IDENTITY MUST BE RENDERED FROM THE REPOSITORY SLUG
 #==============================================================================

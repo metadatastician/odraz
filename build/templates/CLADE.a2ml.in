@@ -15,7 +15,7 @@
 #
 # The forge, owner and repo are part of the identity. Re-derive if any changes.
 uuid = "{{UUID}}"
-primary-forge = "github"
+primary-forge = "{{FORGE}}"
 primary-owner = "{{OWNER}}"
 canonical-name = "{{REPO}}"
 prefixed-name = "UNASSIGNED-{{REPO}}"   # becomes <primary>-{{REPO}} once the clade is chosen

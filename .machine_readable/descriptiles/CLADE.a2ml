@@ -21,13 +21,14 @@
 # ===========================================================================
 
 [identity]
-# THE UUID IS DERIVED, NOT ALLOCATED (gv-clade-index:
-# docs/SPEC-clade-verisim-portal.adoc §Identity Model):
-#     uuid = UUIDv5(namespace = URL, name = "github.com/<owner>/<name>")
-# This value is a recomputable fact about THIS repo and nothing else:
-#     uuidgen --sha1 --namespace @url --name "github.com/hyperpolymath/rsr-template-repo"
-#     -> a5ea1382-a34c-5334-8a46-a2ebe904c810
-uuid = "25d6f5aa-1309-8a09-b669-6bef1d20994c"
+# Derived with UUIDv8 profile C (standards ADR-008, D320).
+# Registered domain: gv-clade-index; name: github.com/<owner>/<name>.
+# Preimage (UTF-8, no trailing newline):
+#     gv-clade-index:github.com/hyperpolymath/rsr-template-repo
+# Take bytes 0..15 of SHA-256(preimage), set the version nibble to 8 and
+# the RFC 9562 variant bits to 10, then format as a UUID:
+#     -> 8e515699-3fb9-8785-8883-ef2a100c2e02
+uuid = "8e515699-3fb9-8785-8883-ef2a100c2e02"
 primary-forge = "github"
 primary-owner = "hyperpolymath"
 canonical-name = "rsr-template-repo"

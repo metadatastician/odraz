@@ -6,23 +6,14 @@
 # The identity below is DERIVED. The clade is NOT — a human must choose it.
 
 [identity]
-# THE UUID IS DERIVED, NOT ALLOCATED, NOT INVENTED. The registry spec
-# (gv-clade-index: docs/SPEC-clade-verisim-portal.adoc §Identity Model):
+# Derived with UUIDv8 profile C (standards ADR-008, D320).
+# Registered domain: gv-clade-index; name: {{FORGE}}/{{OWNER}}/{{REPO}}.
+# Preimage (UTF-8, no trailing newline):
+#     gv-clade-index:{{FORGE}}/{{OWNER}}/{{REPO}}
+# Take bytes 0..15 of SHA-256(preimage), set the version nibble to 8 and
+# the RFC 9562 variant bits to 10, then format as a UUID.
 #
-#     uuid = UUIDv5(namespace = URL, name = "github.com/<owner>/<name>")
-#
-# "The same repo always produces the same UUID without a lookup table." It is a
-# fact anyone can recompute and check — never copy one from another repo, and
-# never make one up. Recompute this one any time with:
-#
-#     uuidgen --sha1 --namespace @url --name "github.com/{{OWNER}}/{{REPO}}"
-#
-# Verify the method first by reproducing a known worked example:
-#     janus example -> e216170e-ff47-5a5c-bbdd-15e61c8190c8
-#
-# The owner segment is part of the derived name, so it is part of the IDENTITY:
-# the same repo hosted under a different owner has a different uuid. Record the
-# owner that is TRUE TODAY, and re-derive if it ever moves.
+# The forge, owner and repo are part of the identity. Re-derive if any changes.
 uuid = "{{UUID}}"
 primary-forge = "github"
 primary-owner = "{{OWNER}}"

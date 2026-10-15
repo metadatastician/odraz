@@ -125,17 +125,15 @@ repo-init archetype="":
     VERSION="0.1.0"
 
     # --- Derive the repo's uuid --------------------------------------------
-    # THE UUID IS DERIVED, NOT ALLOCATED (gv-clade-index:
-    # docs/SPEC-clade-verisim-portal.adoc §Identity Model):
-    #     uuid = UUIDv5(namespace = URL, name = "github.com/<owner>/<name>")
-    # We know OWNER and REPO, so this is computable here and must never be
-    # guessed or copied. The owner segment is part of the derived name, so it is
-    # part of the identity — a repo hosted elsewhere derives a different uuid.
-    if command -v uuidgen >/dev/null 2>&1; then
-        REPO_UUID=$(uuidgen --sha1 --namespace @url --name "${FORGE}/${OWNER}/${REPO}")
-    else
-        REPO_UUID="UNASSIGNED"
-    fi
+    # UUIDv8 profile C (standards ADR-008, D320): SHA-256 of the UTF-8
+    # preimage below, with no trailing newline. Take bytes 0..15, then set
+    # version = 8 and the RFC 9562 variant bits = 10. The forge, owner and
+    # repo are part of the identity — moving any of them changes the uuid.
+    REPO_HASH=$(printf '%s' "gv-clade-index:${FORGE}/${OWNER}/${REPO}" | sha256sum)
+    REPO_HASH="${REPO_HASH%% *}"
+    printf -v REPO_UUID '%s-%s-8%s-%x%s-%s' \
+        "${REPO_HASH:0:8}" "${REPO_HASH:8:4}" "${REPO_HASH:13:3}" \
+        "$(( (16#${REPO_HASH:16:1} & 3) | 8 ))" "${REPO_HASH:17:3}" "${REPO_HASH:20:12}"
 
     # Derive citation name parts (best-effort split on last space)
     AUTHOR_LAST="${AUTHOR##* }"
@@ -464,15 +462,8 @@ repo-init archetype="":
         mkdir -p "$(dirname "$CLADE_OUT")"
         cp "$CLADE_IN" "$CLADE_OUT"
         rm -rf build/templates          # template-only; not part of your repo
-        if [ "$REPO_UUID" = "UNASSIGNED" ]; then
-            echo "  uuid:  UNASSIGNED — uuidgen not found."
-            echo "         Install util-linux (uuid-runtime), then run:"
-            echo "           uuidgen --sha1 --namespace @url --name \"${FORGE}/${OWNER}/${REPO}\""
-            echo "         and put the result in $CLADE_OUT."
-        else
-            echo "  uuid:  $REPO_UUID"
-            echo "         (uuid5 of ${FORGE}/${OWNER}/${REPO} — derived, recomputable, not invented)"
-        fi
+        echo "  uuid:  $REPO_UUID"
+        echo "         (UUIDv8 profile C of gv-clade-index:${FORGE}/${OWNER}/${REPO})"
         echo "  clade: UNASSIGNED — a human must choose one of the 12."
         echo "         CLADE-003/006 FAIL until you do. That is deliberate:"
         echo "         an unchosen clade must not look like a chosen one."

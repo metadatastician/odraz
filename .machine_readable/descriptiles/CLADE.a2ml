@@ -63,7 +63,7 @@ previous-names = []
 # Added 2026-07-17: this file had no [status] block, so it failed CLADE-004 and
 # CLADE-005 — and so did every repo that inherited it.
 phase = "active"
-since = "2026-03-16"
+since = "2026-09-24"
 present = true
 aliases = []
 merged-into = ""
@@ -73,5 +73,5 @@ ended = ""
 
 [[status.history]]
 phase = "active"
-since = "2026-03-16"
+since = "2026-09-24"
 note = "the estate's canonical repository template; in production use"

@@ -264,7 +264,7 @@ gcc -o example example.c -lodraz -L./zig-out/lib
 
 [source,idris]
 ----
-import ODRAZ.ABI.Foreign
+import Abi.Foreign
 
 main : IO ()
 main = do

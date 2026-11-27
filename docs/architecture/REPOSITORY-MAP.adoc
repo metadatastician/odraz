@@ -205,7 +205,7 @@ predecessors did.
 | yes
 | site-operations bundle; canonical .well-known/ lives at www/.well-known/ (issue #53)
 
-| `ziz_chora.deed`
+| `odraz_chora.deed`
 | yes
 | the repo deed: universal AI entry point; family-7 allocation manifest + ply tree folded in (standards#837 pilot). Filename carries the repo slug (deed dispatch <stem>_chora.deed)
 

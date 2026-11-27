@@ -15,7 +15,7 @@ Replace all {{PLACEHOLDER}} values:
   {{CONDUCT_EMAIL}}    - Email for conduct reports
   {{CONDUCT_TEAM}}     - Name of conduct team/committee
   {{RESPONSE_TIME}}    - Initial response SLA (e.g., 48 hours)
-  {{CURRENT_YEAR}}     - Current year
+  2026     - Current year
 
 Review and customise:
 - Adjust enforcement ladder for your community size
@@ -335,4 +335,4 @@ We're all here because we care about this project. Let's make it a place where e
 
 ---
 
-<sub>Last updated: {{CURRENT_YEAR}} · Based on Contributor Covenant 2.1</sub>
+<sub>Last updated: 2026 · Based on Contributor Covenant 2.1</sub>

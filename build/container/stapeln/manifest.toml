@@ -1,27 +1,27 @@
 # SPDX-License-Identifier: MPL-2.0
 #
-# Cerro Torre manifest for {{PROJECT_NAME}} .ctp bundle
+# Cerro Torre manifest for odraz .ctp bundle
 #
 # This manifest describes the container image for verified
 # container packaging. Used by `ct pack` to create .ctp bundles.
 
 [metadata]
-name = "{{SERVICE_NAME}}"
-version = "{{VERSION}}"
+name = "odraz"
+version = "0.1.0"
 revision = 1
-summary = "{{PROJECT_DESCRIPTION}}"
+summary = "Dialectic Programming Language for the Industrial Workstations of the World (the pun, not the semantics): a unityped, homoiconic, reflexive language with no typechecker, where a Judgement Evidence Graph records what is believed about each term and why. Pre-alpha; Chapel bootstrap."
 description = """
-{{PROJECT_NAME}} — containerised service packaged as a verified
+odraz — containerised service packaged as a verified
 cerro-torre .ctp bundle with Ed25519 signing and full provenance
 tracking.
 """
 license = "{{LICENSE}}"
-homepage = "https://{{FORGE}}/{{OWNER}}/{{REPO}}"
+homepage = "https://github.com/metadatastician/odraz"
 maintainer = "{{AUTHOR}} <{{EMAIL}}>"
 
 [provenance]
-upstream = "https://{{FORGE}}/{{OWNER}}/{{REPO}}"
-import_date = {{CURRENT_DATE}}T00:00:00Z
+upstream = "https://github.com/metadatastician/odraz"
+import_date = 2026-11-27T00:00:00Z
 
 [dependencies]
 runtime = ["ca-certificates", "curl"]
@@ -35,7 +35,7 @@ APP_HOST = "[::]"
 APP_PORT = "{{PORT}}"
 
 [outputs]
-primary = "{{SERVICE_NAME}}"
+primary = "odraz"
 split = []
 
 [attestations]

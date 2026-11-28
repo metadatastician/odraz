@@ -185,7 +185,7 @@ shape gate, aspect suite and e2e suite are red.
   FAIL=1. The 4 hits are text that names the banned words
   (`verification/proofs/README.adoc` lines 48-50, and a comment in
   `verification/proofs/coq/TypeSafety.v`). They look like false positives,
-  but the gate is red. Its banner still prints the template's `{{PROJECT}}`.
+  but the gate is red. Its banner still prints the template's `ODRAZ`.
 * *e2e suite red.* `bash tests/e2e.sh` exited 1 with PASS=0, FAIL=1 (template
   instantiation). Run from this git worktree, it failed at "could not re-init
   the test repo". Run from a copy without `.git`, it failed at

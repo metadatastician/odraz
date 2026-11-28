@@ -386,4 +386,4 @@ This security policy may be updated from time to time. Significant changes will 
 
 ---
 
-<sub>Last updated: {{CURRENT_YEAR}} · Policy version: 1.0.0</sub>
+<sub>Last updated: 2026 · Policy version: 1.0.0</sub>
